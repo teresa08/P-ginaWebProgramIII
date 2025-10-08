@@ -1,303 +1,533 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cooperativa San Juan Solidaria</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-  <!-- Menú de navegación -->
-  <header class="navbar">
-    <div class="container">
-      <div class="logo">
-        <h1>San Juan Solidaria</h1>
-        <p>Cooperativa de Ahorro y Crédito</p>
-      </div>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#beneficios">Beneficios</a></li>
-          <li><a href="#clientes">Clientes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="nav-cta">
-        <a href="https://wa.me/18095550123" class="btn-contact" aria-label="Contactar por WhatsApp">WhatsApp</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Sección principal (Hero) -->
-  <section id="inicio" class="hero">
-    <div class="container">
-      <h2>Finanzas con sentido humano</h2>
-      <p>
-        Servicios financieros seguros, cercanos y pensados para tu comunidad.
-      </p>
-      <a href="#servicios" class="btn-primary">Conoce nuestros servicios</a>
-    </div>
-  </section>
-
-  <!-- Sección: Servicios ............ -->
-  <section id="servicios" class="section">
-    <div class="container">
-      <h2>Nuestros Servicios</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Compra de Aportaciones</h3>
-          <p>
-            Las aportaciones son los depósitos que todos los socios realizan y
-            que en conjunto constituyen el patrimonio social de la
-            cooperativa.
-          </p>
-          <br />
-          <p>
-            Toda persona que desee ser socio de COOPNAZONAF debe pagar, al
-            momento de inscribirse, la cuota de admisión no reembolsable de
-            RD$50.00 y debe adquirir por lo menos un certificado de aportación
-            que tiene un valor nominal de RD$150.00. El socio puede comprar
-            tantas aportaciones como desee y mientras mantenga la calidad de
-            socio no podrá retirarlas, pero podrá utilizar el 25 por ciento de
-            estas para apalancar préstamos. Otras de las ventajas de comprar
-            aportaciones son que te conviertes en socio dueño de la
-            cooperativa, además de que recibes interés anual como excedente.
-          </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clon de Banreservas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container top-links">
+        <span class="currency">USD ▼</span>
+        <span class="currency-value">Compra 60.90</span>
+        <span class="currency-value">Venta 62.90</span>
+        <!-- Menú desplegable -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-trigger">Canales Banreservas ▼</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-section">
+              <a href="#">Tutoriales Canales</a>
+              <h4>PERSONAS</h4>
+              <a href="#">Oficinas Comerciales</a>
+              <a href="#">Cajeros Automáticos</a>
+              <a href="#">Centro de Contacto</a>
+              <a href="#">TuBanco Personas</a>
+              <a href="#">App Personas</a>
+              <a href="#">Turnos y Citas</a>
+            </div>
+            <div class="dropdown-section">
+              <h4>EMPRESAS</h4>
+              <a href="#">Turnos y citas</a>
+              <a href="#">TuBanco Empresas</a>
+              <a href="#">App Empresas</a>
+              <a href="#">Subagente Banreservas</a>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Ahorro Corriente</h3>
-          <p>
-            Este tipo de ahorro permite al socio tener los recursos necesarios
-            para acceder a préstamos y órdenes de servicio en el momento que
-            los necesite. El monto mínimo para ahorrar es de RD$75.00
-            semanales o su equivalente de manera quincenal RD$162.50,
-            bisemanal RD$150.00 o mensual RD$325.00.
-          </p>
-          <br />
-          <p>
-            El socio puede realizar retiros cuando el saldo de su cuenta de
-            Ahorro Corriente esté positivo. Por este tipo de depósito la
-            Cooperativa paga una tasa de interés igual al 3% anual. La tasa de
-            interés puede ser modificada por el Consejo de Administración
-            cuando las condiciones internas y el mercado lo requieran.
-          </p>
+        <!-- Menú desplegable -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-trigger">Sobre Nosotros ▼</a>
+          <div class="dropdown-menu">
+            <a href="#">Visión,Misión y Valores</a>
+            <a href="#">Voluntariado Banreservas</a>
+            <a href="#">Centro Cultural Banreservas</a>
+            <a href="#">Responsabilidad Social</a>
+            <a href="#">Memorias anuales</a>
+            <a href="#">Se parte de nosotros</a>
+            <a href="#">Noticias y prensa</a>
+            <a href="#">Consejo de Directores</a>
+            <a href="#">Principales Ejecutivos</a>
+            <a href="#">Despacho del presidente ejecutivos</a>
+            <a href="#">Ley num 13-24 y Estatutos</a>
+            <a href="#">Emisiones de Valores</a>
+            <a href="#">Cuentas inativas</a>
+            <a href="#">FATCA</a>
+            <a href="#">Informes Financiero</a>
+            <a href="#">Gobierno Corporativo</a>
+            <a href="#">Contratos de adhesion</a>
+            <a href="#">Codigos de etica</a>
+          </div>
         </div>
-        <div class="card">
-          <h3>Ahorro Programado</h3>
-          <p>
-            Es un sistema de ahorro acumulativo y flexible para el
-            financiamiento de proyectos y compromisos puntuales, como la
-            compra de un vehículo o una vivienda. Esta cuenta no establece la
-            obligación de ahorrar un monto mínimo y la cooperativa paga una
-            tasa de interés de un 3% anual. El socio podrá realizar retiros de
-            su cuenta de Ahorro Programado cuando así lo considere o abrir
-            certificados de depósitos a plazo fijo cuando acumule ciertas
-            cantidades en dicha cuenta.
-          </p>
+        <a href="#">Mapa</a>
+        <a href="#">Calculadoras</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-trigger">Acceder a TuBanco ▼</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-section">
+              <h4>PERSONAS</h4>
+              <a href="#">ADMINISTRAR CUENTAS</a>
+              <div class="submenu">
+                <h5>SUSCRIPCIÓN</h5>
+                <a href="#">TU BANCO PERSONAS</a>
+              </div>
+            </div>
+            <div class="dropdown-section">
+              <h4>EMPRESAS</h4>
+              <a href="#">MANEJA TU EMPRESA</a>
+              <div class="submenu">
+                <h5>SUSCRIPCIÓN</h5>
+                <a href="#">TU BANCO EMPRESAS</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Depósitos a Plazo Fijo</h3>
-          <p>
-            Son depósitos que el socio realiza en periodos superiores a 30
-            días. Los mismos generan una tasa de interés superior a otra
-            modalidad de ahorro y pueden ser capitalizables o entregados
-            mensualmente.
-          </p>
-          <br />
-          <p>
-            El monto mínimo para abrir este tipo de depósito es de
-            RD$5,000.00, el cual no podrá ser retirado antes de los treinta
-            (30) días de su emisión. La tasa de interés a pagar será
-            establecida por el Consejo de Administración.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo De Emergencia</h3>
-          <p>
-            Estos préstamos están disponibles para todos los socios en adición
-            a cualquier otro préstamo u orden de servicio, siempre que sus
-            garantías lo permitan y cuando el socio haya hecho por lo menos un
-            depósito a su cuenta de ahorro. Para acceder al préstamo De
-            Emergencia se toma en cuenta el salario del socio según la
-            siguiente escala: desde RD$13,915.00 a RD$50,000.00 puede tomar
-            RD$15,000.00, salario de RD$50,001.00 a RD$100,000.00 puede
-            solicitar RD$25,000.00 y los salarios de RD$100,001.00 en adelante
-            RD$30,000.00
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo De Hasta una Vez los Ahorros</h3>
-          <p>
-            Son los préstamos que solicita el socio por un valor de hasta una
-            vez sus ahorros, más el monto del certificado de depósito a plazo
-            fijo, que pudiera poseer en la cooperativa. La tasa de interés del
-            préstamo De Hasta una Vez los Ahorros es de un 12% anual.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo De Hasta Dos Veces los Ahorros</h3>
-          <p>
-            Son los préstamos que solicita el socio por un valor mayor de una
-            vez los ahorros y hasta dos veces los ahorros, más el monto del
-            certificado de depósito a plazo fijo que pudiera poseer en la
-            Cooperativa. Para que el socio pueda solicitar este tipo de
-            préstamo, debe haber realizado ahorros por un período igual o
-            mayor a dos meses de forma semanal, bisemanal, quincenal o
-            mensual, a través de la nómina de la empresa para la que labora.
-            La tasa de interés es de un 16% anual.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo De Hasta Tres Veces los Ahorros</h3>
-          <p>
-            Son los préstamos que solicita el socio por un valor de hasta tres
-            veces la suma de sus ahorros. Este préstamo tiene un tope de hasta
-            tres millones de pesos, más el monto del certificado de depósito a
-            plazo fijo, menos la totalidad de las deudas pendientes,
-            considerando todos los servicios, excepto el préstamo de
-            emergencia. El socio que requiera este tipo de préstamo tiene que
-            haber realizado ahorros por un período igual o mayor a un año de
-            manera regular a través de descuentos vía nómina. La tasa de
-            interés es de un 18% anual.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo De Excepción</h3>
-          <p>
-            COOPNAZONAF ofrece préstamos de excepción a sus socios basados en
-            el monto de su salario mensual, sin excluir otros, con el objetivo
-            de que pueda organizarse y consolidar las deudas que pudiera
-            tener, buscando administrar una sola deuda a través de su
-            cooperativa, evitando así el sobre endeudamiento más allá de su
-            capacidad de pago.
-          </p>
-          <br />
-          <p>
-            Los socios que soliciten este préstamo deben tener seis meses
-            ahorrando vía nómina, por lo menos tres años laborando en su
-            empresa y no debe haber hecho retiros de su cuenta de ahorro en
-            los últimos tres meses. Este préstamo tiene un tope de un millón
-            de pesos y una tasa de interés de 20 por ciento.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo Prendario</h3>
-          <p>
-            Te ayudamos a cumplir tu meta de adquirir un vehículo, nuevo o
-            usado, a través del préstamo prendario. Para acceder a este
-            préstamo el socio debe tener una cuenta de Ahorro Programado y un
-            año ahorrando vía nómina. La tasa de interés es de un 16% anual.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo Hipotecario</h3>
-          <p>
-            Con nuestros préstamos hipotecarios podrás alcanzar el sueño de
-            tener tu hogar o el solar que quieres a una tasa de 12% anual.
-            Para acceder a este tipo de préstamo el socio debe tener una
-            cuenta de Ahorro Programado y un año ahorrando vía nómina.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Préstamo De Mejora de Vivienda</h3>
-          <p>
-            Este préstamo está destinado a la realización de esos arreglos que
-            necesitas hacer para vivir como deseas. Para acceder a este tipo
-            de préstamo el socio debe tener una cuenta de Ahorro Programado y
-            un año ahorrando vía nómina. La tasa de interés es de un 12%
-            anual.
-          </p>
-        </div>
+        <button class="search-btn">🔍</button>
       </div>
     </div>
-  </section>
 
-  <!-- Sección: Opiniones de clientes satisfechos -->
-  <section id="clientes" class="section">
-    <div class="container">
-      <h2>Opiniones de clientes satisfechos</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>María G., socia desde 2020</h3>
-          <p>
-            Gracias al ahorro voluntario, he logrado juntar un fondo de emergencia sin pagar comisiones. ¡Mi dinero
-            crece cada mes!»
-          </p>
+    <nav class="main-nav">
+      <div class="container nav-content">
+        <div class="logo">
+          <img src="logo.png" alt="Logo Banreservas" />
         </div>
-        <div class="card">
-          <h3>Carlos R., emprendedor</h3>
-          <p>
-            Obtuve un crédito personal en menos de 48 horas y con una tasa que no encontré en ningún banco. La atención
-            fue excelente.»
-          </p>
-        </div>
-        <div class="card">
-          <h3>Yolanda M., dueña de negocio</h3>
-          <p>
-            Con mi microcrédito pude comprar nueva mercancía y ampliar mi local. Los requisitos fueron sencillos y me
-            apoyaron en todo momento.»
-          </p>
-        </div>
-        <div class="card">
-          <h3>José L., socio activo</h3>
-          <p>
-            Comprar aportaciones no solo me da rendimientos, sino que siento que soy parte real de la cooperativa.
-            ¡Aquí todos somos dueños!»
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Sección: Beneficios -->
-  <section id="beneficios" class="section bg-light">
-    <div class="container">
-      <h2>¿Por qué elegirnos?</h2>
-      <div>
-        <ul class="benefits-list">
-          <li>Asamblea anual con reparto de excedentes</li>
-          <li>Atención personalizada en Piedra Blanca</li>
-          <li>Sin comisiones ocultas</li>
-          <li>Educación financiera gratuita</li>
-          <li>Transparencia en la gestión y operaciones</li>
-        </ul>
-        <ul class="benefits-list">
-          <li>Acceso a créditos con tasas preferenciales</li>
-          <li>Participación democrática en la toma de decisiones</li>
-          <li>Promoción del ahorro responsable</li>
-          <li>Apoyo al desarrollo comunitario y local</li>
-          <li>Productos y servicios adaptados a las necesidades de los socios</li>
-        </ul>
+
+        <ul class="client-categories">
+          <li>
+            <input type="radio" id="cat1" name="category" checked />
+            <label for="cat1">PERSONAL</label>
+          </li>
+          <li>
+            <input type="radio" id="cat2" name="category" />
+            <label for="cat2">PREFERENTE</label>
+          </li>
+          <li>
+            <input type="radio" id="cat3" name="category" />
+            <label for="cat3">PYME</label>
+          </li>
+          <li>
+            <input type="radio" id="cat4" name="category" />
+            <label for="cat4">EMPRESARIAL</label>
+          </li>
+          <li>
+            <input type="radio" id="cat5" name="category" />
+            <label for="cat5">GUBERNAMENTAL</label>
+          </li>
+          <li>
+            <input type="radio" id="cat6" name="category" />
+            <label for="cat6">INTERNACIONAL</label>
+          </li>
         </ul>
       </div>
-    </div>
-  </section>
+    </nav>
+    <nav class="product-nav">
+      <div class="container product-links">
+        <!-- Menú desplegable -->
+        <div class="dropdown-product">
+          <a href="#product-link" class="product-link">CUENTAS</a>
+          <div class="dropdown-content">
+            <div class="column">
+              <h4>AHORRO</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Cuenta de Ahorro en Pesos</a>
+                  <a href="#">Cuenta Ahorro Más</a>
+                  <a href="#">Cuenta de Ahorro Infantil en Pesos</a>
+                  <a href="#">Cuenta de Ahorro Infantil en Dólares</a>
+                  <a href="#">Cuenta de Ahorro en Dólares</a>
+                  <a href="#">Cuenta de Ahorro en Euros</a>
+                  <a href="#"
+                    >Cuenta de Ahorro para residentes en el extranjero</a
+                  >
+                  <a href="#">Cuenta de Ahorro Básica Inclusiva</a>
+                  <a href="#">Cuenta de Ahorro Remesas</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>CORRIENTES</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Cuenta Corriente Personal</a>
+                  <a href="#">Cuenta Corriente Más Personal</a>
+                  <a href="#">Cuenta Corriente sin Chequera Transaccional</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>SOLUCIONES DIGITALES</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Cuenta MIO Banreservas</a>
+                  <a href="#">Cuenta Digital</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Menú desplegable -->
+        <div class="dropdown-product">
+          <a href="#" class="product-link">INVERSIONES</a>
+          <div class="dropdown-content">
+            <div class="column">
+              <h4>DEPÓSITO A PLAZO</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Depósito a Plazo en Pesos</a>
+                  <a href="#">Depósito a Plazo en dólares y euros</a>
+                  <a href="#">Depósito a Plazo Digital</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>MERCADO DE VALORES</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Inversiones en Títulos-Valores</a>
+                  <a href="#">Fondos de Inversión</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>SOLUCIONES DIGITALES</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Depósito a Plazo Digital</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Menú desplegable -->
+        <div class="dropdown-product">
+          <a href="#" class="product-link">TARJETAS</a>
+          <div class="dropdown-content">
+            <div class="column">
+              <h4>DÉBITO</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Mastercard Débito Dólares</a>
+                  <a href="#">Mastercard Débito Gold</a>
+                  <a href="#">Mastercard Débito Platinum</a>
+                  <a href="#">Mastercard Débito Standard</a>
+                  <a href="#">Mastercard Débito Standard Táctil</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>CRÉDITO</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Tarjeta de crédito Visa Ser</a>
+                  <a href="#">Credimás Banreservas</a>
+                  <a href="#">Mastercard Black</a>
+                  <a href="#">Mastercard Standard Táctil Banreservas</a>
+                  <a href="#">Visa Flotilla Personal</a>
+                  <a href="#">Visa Infinite</a>
+                  <a href="#">Visa Platinum Universe</a>
+                  <a href="#">Visa y Mastercard Clásica</a>
+                  <a href="#">Visa y Mastercard Gold</a>
+                  <a href="#">Visa y Mastercard Platinum</a>
+                  <a href="#">Tarjeta de crédito Preserva</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <!-- Columna vacía para mantener el diseño de 2 columnas -->
+            <div class="column"></div>
+          </div>
+        </div>
+        <!-- Menú desplegable-->
+        <div class="dropdown-product">
+          <a href="#" class="product-link">PRÉSTAMOS</a>
+          <div class="dropdown-content">
+            <div class="column">
+              <h4>PERSONALES</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Préstamos de Consumo</a>
+                  <a href="#">Vacaciones Felices</a>
+                  <a href="#">Educación y Cultura</a>
+                  <a href="#">Empleado Feliz</a>
+                  <a href="#">Sueldo Más</a>
+                  <a href="#">Pensionado Feliz</a>
+                  <a href="#">Préstamos en Dólares</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>HIPOTECARIOS</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Préstamos Hipotecarios</a>
+                  <a href="#"
+                    >Préstamos Hipotecarios para residentes en el extranjero</a
+                  >
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>VEHÍCULOS</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Movilidad Banreservas</a>
+                  <a href="#">Préstamos Vehículos Nuevos</a>
+                  <a href="#">Préstamos Vehículos Usados</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Menú desplegable -->
+        <div class="dropdown-product">
+          <a href="#" class="product-link">SEGUROS</a>
+          <div class="dropdown-content">
+            <div class="column">
+              <h4>SEGUROS DE PERSONAS</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Accidentes Personales</a>
+                  <a href="#">Asistencia Funeraria</a>
+                  <a href="#">Seguro Médico Internacional Just</a>
+                  <a href="#">Viajes Reservas</a>
+                  <a href="#">Vida Individual en Pesos y Dólares</a>
+                  <a href="#">Vida Reservas</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <div class="column">
+              <h4>RIESGOS GENERALES</h4>
+              <div class="column-content">
+                <div class="links">
+                  <a href="#">Rescate De Prisa</a>
+                  <a href="#">Vehículos de Motor</a>
+                  <a href="#">Vivienda Segura</a>
+                </div>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+            </div>
+            <!-- Columna vacía para mantener diseño de 3 columnas -->
+            <div class="column"></div>
+          </div>
+        </div>
+        <a href="#">REMESAS, IMPUESTOS Y SERVICIOS</a>
+        <a href="#">ATENCIÓN AL USUARIO</a>
+      </div>
+    </nav>
+    <div class="carrusel">
+      <div class="slides">
+        <div
+          class="slide"
+          style="
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHMioovDwOVMXElziaztzrJZxMQPfxj6CYxA&s');
+          "
+        >
+          <div class="content">
+            <h2>Descubre RD Virtual</h2>
+            <p>
+              Primera sala permanente de realidad virtual sobre la cultura
+              Dominicana
+            </p>
+            <a href="#" class="btn">RESERVA AQUÍ</a>
+          </div>
+        </div>
 
-  <!-- Sección: Contacto -->
-  <section id="contacto" class="section">
-    <div class="container">
-      <h2>Contáctanos</h2>
-      <h3>Nuestro equipo de expertos está disponible para responder a sus preguntas.</h3>
-      <p>Estamos en la calle Duarte #45, Piedra Blanca, San Juan.</p>
-      <p>Teléfono: <a href="tel:+18095550123">+1 (809) 555-0123</a></p>
-      <a href="https://wa.me/18095550123" class="btn-primary">Escríbenos por WhatsApp</a>
-    </div>
-  </section>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://cdnebrpeastus.azureedge.net/banreservas/media/tbkfoyqk/ci-mejor-banco-digital-_mailing-cliente.jpg');
+          "
+        >
+          <div class="banner-text">
+            <h1>Remesas<br />Banreservas</h1>
+            <h2>Tu dinero fácil,<br />rápido y seguro</h2>
+            <button class="cta-button">CONOCE MÁS</button>
+          </div>
+        </div>
 
-  <!-- Pie de página -->
-  <footer class="footer">
-    <div class="container">
-      <p>
-        &copy; 2025 Cooperativa San Juan Solidaria. Todos los derechos
-        reservados.
-      </p>
-      <p>
-        Iniciativa comunitaria — San Juan de la Maguana, República Dominicana.
-      </p>
-    </div>
-  </footer>
-</body>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://cdnebrpeastus.azureedge.net/banreservas/media/tbkfoyqk/ci-mejor-banco-digital-_mailing-cliente.jpg');
+          "
+        >
+          <div class="banner-text">
+            <h1>Descubre<br />RD Virtual</h1>
+            <h2>Visitanos,<br />Nuestra pagina web</h2>
+            <button class="cta-button">CONOCE MÁS</button>
+          </div>
+        </div>
+      </div>
 
+      <div class="navigation">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <section class="press-room-section">
+      <div class="accessibility-icon-fixed">
+        <i class="fas fa-universal-access"></i>
+      </div>
+
+      <h2 class="section-title">Sala de prensa</h2>
+
+      <div class="news-grid">
+        <a href="enlace-a-noticia-1.html" class="news-card">
+          <div class="card-image-container">
+            <img
+              src="https://cdnebrpeastus.azureedge.net/banreservas/media/3finpake/foto-5.jpg"
+              alt="Banreservas celebra lanzamiento de su nueva campaña institucional"
+              class="card-image"
+            />
+            <div class="card-date">07/10/2025</div>
+          </div>
+          <div class="card-content">
+            <p class="card-text">
+              Banreservas celebra lanzamiento de su nueva campaña institucional
+              <strong>¡Somos invencibles!</strong>
+            </p>
+            <div class="card-arrow"></div>
+          </div>
+        </a>
+
+        <a href="#" class="news-card">
+          <div class="card-image-container">
+            <div class="card-date">07/10/2025</div>
+          </div>
+          <div class="card-content card-content-top-image">
+            <p class="card-text">
+              Banreservas obtiene recertificación ISO 37001 sobre Sistema de
+              Gestión Antisoborno
+            </p>
+            <div class="card-arrow"></div>
+          </div>
+          <div class="card-image-bottom-container">
+            <img
+              src="https://cdnebrpeastus.azureedge.net/banreservas/media/4sph32ng/fachada2.jpg"
+              alt="Edificio de Banreservas"
+              class="card-image-bottom"
+            />
+          </div>
+        </a>
+
+        <a href="enlace-a-noticia-3.html" class="news-card">
+          <div class="card-image-container">
+            <img
+              src="https://cdnebrpeastus.azureedge.net/banreservas/media/au1dxnqu/2a-voluntariado-banreservas.jpeg"
+              alt="Voluntariado Banreservas siembra 1,500 caobas criollas"
+              class="card-image"
+            />
+            <div class="card-date">06/10/2025</div>
+          </div>
+          <div class="card-content">
+            <p class="card-text">
+              Voluntariado Banreservas siembra 1,500 caobas criollas en
+              Navarrete durante el Mes de la Reforestación
+            </p>
+            <div class="card-arrow"></div>
+          </div>
+        </a>
+      </div>
+
+      <a href="enlace-a-todas-las-noticias.html" class="view-more-button"
+        >VER MAS</a
+      >
+    </section>
+    <button class="help-button">Ayuda en línea</button>
+    <footer class="banreservas-footer">
+      <div class="footer-main-content">
+        <div class="footer-column contact">
+          <h3>CONTACTO</h3>
+          <ul>
+            <li><i class="fas fa-phone"></i> 809-960-2121</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Encuentra una Oficina,
+              Cajero o Subagente CERCANO.
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contacto@banreservas.com"
+                >contacto@banreservas.com</a
+              >
+            </li>
+          </ul>
+          <p class="cta-text">¿Deseas invertir en República Dominicana?</p>
+          <p class="cta-text">
+            Would you like to invest in the Dominican Republic?
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>SOBRE NOSOTROS</h3>
+          <ul>
+            <li><a href="#">Visión, Misión y Valores</a></li>
+            <li><a href="#">Voluntariado Banreservas</a></li>
+            <li><a href="#">Centro Cultural Banreservas</a></li>
+            <li><a href="#">Códigos de Ética</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>FILIALES</h3>
+          <ul>
+            <li><a href="#">ARS Reservas</a></li>
+            <li><a href="#">Seguros Reservas</a></li>
+            <li><a href="#">AFP Reservas</a></li>
+            <li><a href="#">Fundación Reservas del País</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>INFORMACIONES</h3>
+          <ul>
+            <li><a href="#">Tu seguridad</a></li>
+            <li><a href="#">Lista bienes disponibles</a></li>
+            <li><a href="#">Monitor financiero</a></li>
+            <li><a href="#">Liberación garantía otorgada por el cliente</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal-info">
+        <p>
+          Los fondos depositados en Banreservas están cubiertos por la garantía
+          de depósitos otorgada por el Fondo de Contingencia creado por el
+          artículo 4 de la Ley Monetaria y Financiera hasta la suma de
+          RD$500,000.00.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Logo Banreservas" />
+          <p>El banco de todos los dominicanos</p>
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Tu seguridad</a>
+          <span class="separator">|</span>
+          <a href="#">Política de Privacidad</a>
+          <span class="separator">|</span>
+          <a href="#">Términos y Condiciones</a>
+          <span class="separator">|</span>
+          <a href="#">Aviso Legal</a>
+          <p class="copyright">
+            Copyright 2025 Banreservas. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
