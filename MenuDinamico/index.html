@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú Dinámico CRUD con Submenús</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Menú Dinámico con Submenús</h1>
+    <nav>
+      <button id="hamburger">☰</button>
+      <ul id="menu"></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="admin">
+      <h2>Administrar Menú</h2>
+
+      <form id="form">
+        <input type="text" id="nombre" placeholder="Nombre del ítem" required>
+        <input type="text" id="enlace" placeholder="Enlace / ruta o URL">
+        <select id="padre">
+          <option value="">-- Sin padre (principal) --</option>
+        </select>
+        <button type="submit">Agregar</button>
+      </form>
+
+      <div class="acciones">
+        <h3>Actualizar o Eliminar</h3>
+        <select id="itemSelect">
+          <option value="">Seleccione un ítem</option>
+        </select>
+        <input type="text" id="nuevoNombre" placeholder="Nuevo nombre">
+        <input type="text" id="nuevoEnlace" placeholder="Nuevo enlace">
+        <button id="btnActualizar">Actualizar</button>
+        <button id="btnEliminar">Eliminar</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

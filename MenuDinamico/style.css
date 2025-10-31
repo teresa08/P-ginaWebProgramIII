@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 15px 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #444;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background: #666;
+}
+
+/* Submenú */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #555;
+  min-width: 200px;
+  flex-direction: column;
+}
+
+nav ul li:hover ul {
+  display: flex;
+}
+
+nav ul li ul li a {
+  padding: 10px;
+}
+
+#hamburger {
+  display: none;
+  background: #222;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#admin {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#admin h2, h3 {
+  margin-top: 0;
+}
+
+#admin input, #admin select, #admin button {
+  margin: 5px 0;
+  padding: 8px;
+}
+
+.acciones {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+}
