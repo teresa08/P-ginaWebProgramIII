@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Multipágina de Salud</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulario de Salud</h1>
+
+        <div class="nav-tabs">
+            <span class="tab-item active" data-page="1">1. Personales</span>
+            <span class="tab-item" data-page="2">2. Familiares</span>
+            <span class="tab-item" data-page="3">3. Condiciones</span>
+            <span class="tab-item" data-page="4">4. Internamientos</span>
+            <span class="tab-item" data-page="5">5. Revisión</span>
+        </div>
+
+        <form id="healthForm">
+            <div id="page1" class="form-page active" data-step="1">
+                <h2>Página 1: Datos Personales</h2>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="cedula">Cédula/ID:</label>
+                    <input type="text" id="cedula" name="cedula" required>
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo:</label>
+                    <select id="sexo" name="sexo" required>
+                        <option value="">Seleccione</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                        <option value="O">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ocupacion">Ocupación:</label>
+                    <input type="text" id="ocupacion" name="ocupacion">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion">
+                </div>
+                <button type="button" onclick="navigatePage(2)">Siguiente</button>
+            </div>
+
+            <div id="page2" class="form-page" data-step="2">
+                <h2>Página 2: Familiares</h2>
+                <div id="familiares-container">
+                    <div class="familiar-row">
+                        <input type="text" placeholder="Nombre" data-field="nombre">
+                        <input type="text" placeholder="Parentesco" data-field="parentesco">
+                        <input type="number" placeholder="Edad" data-field="edad" min="0">
+                        <button type="button" class="btn-remove" onclick="removeDynamicRow(this)">Eliminar</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addFamiliarRow()">Agregar Familiar</button>
+                <div class="navigation-buttons">
+                    <button type="button" onclick="navigatePage(1)">Anterior</button>
+                    <button type="button" onclick="navigatePage(3)">Siguiente</button>
+                </div>
+            </div>
+
+            <div id="page3" class="form-page" data-step="3">
+                <h2>Página 3: Condiciones Pre-existentes de Salud</h2>
+                <div id="condiciones-container">
+                    <div class="condicion-row">
+                        <input type="text" placeholder="Enfermedad" data-field="enfermedad">
+                        <input type="text" placeholder="Tiempo con la enfermedad" data-field="tiempo">
+                        <button type="button" class="btn-remove" onclick="removeDynamicRow(this)">Eliminar</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addCondicionRow()">Agregar Condición</button>
+                <div class="navigation-buttons">
+                    <button type="button" onclick="navigatePage(2)">Anterior</button>
+                    <button type="button" onclick="navigatePage(4)">Siguiente</button>
+                </div>
+            </div>
+
+            <div id="page4" class="form-page" data-step="4">
+                <h2>Página 4: Internamientos Realizados</h2>
+                <div id="internamientos-container">
+                    <div class="internamiento-row">
+                        <input type="date" placeholder="Fecha" data-field="fecha">
+                        <input type="text" placeholder="Centro Médico" data-field="centro">
+                        <input type="text" placeholder="Diagnóstico" data-field="diagnostico">
+                        <button type="button" class="btn-remove" onclick="removeDynamicRow(this)">Eliminar</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addInternamientoRow()">Agregar Internamiento</button>
+                <div class="navigation-buttons">
+                    <button type="button" onclick="navigatePage(3)">Anterior</button>
+                    <button type="button" onclick="navigatePage(5)">Siguiente</button>
+                </div>
+            </div>
+
+            <div id="page5" class="form-page" data-step="5">
+                <h2>Página 5: Revisión y Acciones</h2>
+                <div id="review-data">
+                    </div>
+                <div class="navigation-buttons">
+                    <button type="button" onclick="navigatePage(4)">Anterior</button>
+                    <button type="button" id="saveBtn" onclick="saveData()">Grabar</button>
+                    <button type="button" id="editBtn" class="hidden" onclick="editCurrentRecord()">Editar</button>
+                    <button type="button" onclick="clearFormAndStartNew()">Nuevo Registro</button>
+                </div>
+
+                <h3>Acciones Adicionales (Simulación BD/Registros)</h3>
+                <div class="form-group">
+                    <label for="selectRecord">Cargar/Editar Registro Existente:</label>
+                    <select id="selectRecord" onchange="loadRecordForEditing(this.value)">
+                        <option value="">Selecciona un registro</option>
+                    </select>
+                </div>
+                <p id="recordStatus"></p>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
