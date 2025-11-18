@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Contactos con QR</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Formulario de Contacto</h1>
+
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required />
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" />
+      </div>
+      <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" />
+      </div>
+      <button type="submit" class="btn-primary">Enviar y Generar QR</button>
+      <button type="button" class="btn-danger" onclick="clearForm()">
+        Limpiar Formulario
+      </button>
+    </form>
+
+    <div id="qrcode"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
