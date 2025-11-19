@@ -6,18 +6,19 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   const email = document.getElementById("email").value.trim();
   const direccion = document.getElementById("direccion").value.trim();
 
-  let vCard = `BEGIN:VCARD
+  let vCard =
+`BEGIN:VCARD
 VERSION:3.0
 FN:${nombre}
-TEL:${telefono}
-EMAIL:${email}
-ADR:${direccion}
+TEL;TYPE=CELL:${telefono}
+EMAIL;TYPE=INTERNET:${email}
+ADR;TYPE=HOME:;;${direccion}
 END:VCARD`;
 
   document.getElementById("qrcode").innerHTML = '';
 
   new QRCode(document.getElementById("qrcode"), {
-    text: `text/vcard;charset=utf-8,${encodeURIComponent(vCard)}`,
+    text: vCard,
     width: 200,
     height: 200,
     correctLevel: QRCode.CorrectLevel.H
