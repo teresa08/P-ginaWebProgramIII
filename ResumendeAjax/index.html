@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resumen de AJAX</title>
+    <style>
+      :root {
+        --bg: #f6f6fb;
+        --card: #fff;
+        --accent: #2563eb;
+        --muted: #555;
+      }
+      body {
+        font-family: Inter, system-ui, Arial;
+        background: var(--bg);
+        margin: 0;
+        color: #111;
+        line-height: 1.6;
+      }
+      header {
+        background: linear-gradient(90deg, #fff 0%, #eef2ff 100%);
+        padding: 26px 20px;
+        border-bottom: 1px solid #e6eef2;
+      }
+      .container {
+        max-width: 900px;
+        margin: 28px auto;
+        padding: 0 18px;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 22px;
+        color: var(--accent);
+      }
+      p.lead {
+        margin: 0;
+        color: var(--muted);
+      }
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.06);
+        margin-top: 18px;
+      }
+      h2 {
+        margin: 24px 0 12px;
+        font-size: 18px;
+        color: var(--accent);
+      }
+      h3 {
+        margin: 18px 0 8px;
+        font-size: 16px;
+        color: #2d3748;
+      }
+      ul,
+      ol {
+        padding-left: 20px;
+        margin: 8px 0 12px;
+      }
+      pre {
+        background: #0b1020;
+        color: #e6eef8;
+        padding: 12px;
+        border-radius: 8px;
+        overflow: auto;
+        font-size: 13px;
+        margin: 12px 0;
+      }
+      code {
+        font-family: source-code-pro, Menlo, Monaco, monospace;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .result {
+        background: #f8f9fc;
+        border: 1px dashed #e6eef2;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+        white-space: pre-wrap;
+        font-family: monospace;
+        font-size: 13px;
+      }
+      footer {
+        max-width: 900px;
+        margin: 28px auto;
+        padding: 10px 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>¿Qué es AJAX?</h1>
+        <p class="lead">
+          Técnica para comunicarse con un servidor sin recargar la página.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Definición</h2>
+        <p class="muted">
+          AJAX (Asynchronous JavaScript and XML) es una técnica de desarrollo
+          web que permite a las aplicaciones enviar y recibir datos de un
+          servidor de forma asíncrona, sin necesidad de recargar toda la página.
+        </p>
+        <p class="muted">
+          Aunque su nombre menciona XML, AJAX no depende de él: puede usar
+          cualquier formato de datos (JSON, texto, HTML, etc.).
+        </p>
+
+        <h2>¿Cómo funciona AJAX?</h2>
+        <p class="muted">
+          AJAX utiliza objetos del navegador (como <code>XMLHttpRequest</code> o
+          la API <code>fetch</code>) para:
+        </p>
+        <ol>
+          <li>Enviar una solicitud al servidor en segundo plano.</li>
+          <li>
+            Esperar la respuesta sin interrumpir la interacción del usuario.
+          </li>
+          <li>
+            Recibir los datos y actualizar solo una parte de la página (el DOM).
+          </li>
+        </ol>
+
+        <h2>Ejemplo con <code>fetch()</code></h2>
+        <pre><code>function obtenerDatos() {
+  fetch('/api/saludo')
+    .then(respuesta => respuesta.text())
+    .then(texto => {
+      document.getElementById('resultado').innerHTML = texto;
+    });
+}</code></pre>
+
+        <div class="row">
+          <button onclick="cargarUsuario()">Probar AJAX</button>
+       <div class="result" id="ajaxResult">Haz clic en "Probar AJAX" para cargar datos.</div>
+        </div>
+
+        <h2>Ventajas de AJAX</h2>
+        <ul>
+          <li>Mejora la experiencia de usuario: no hay recargas completas.</li>
+          <li>Mayor velocidad percibida: solo se actualiza lo necesario.</li>
+          <li>
+            Menor uso de ancho de banda: se transfieren solo los datos
+            relevantes.
+          </li>
+          <li>Hace las aplicaciones web más dinámicas e interactivas.</li>
+        </ul>
+
+        <h2>Desventajas y desafíos</h2>
+        <ul>
+          <li>Complejidad en el manejo de errores y estados de carga.</li>
+          <li>
+            Puede romper la funcionalidad del botón "Atrás" del navegador si no
+            se gestiona el historial.
+          </li>
+          <li>
+            Dificulta la indexación por motores de búsqueda si el contenido
+            depende totalmente de AJAX (sin SSR).
+          </li>
+          <li>
+            Depende de JavaScript: si está desactivado, la funcionalidad se
+            pierde.
+          </li>
+        </ul>
+
+        <h2>Buenas prácticas</h2>
+        <ul>
+          <li>
+            Indica al usuario que se está cargando (spinner, mensaje
+            "Cargando...").
+          </li>
+          <li>Maneja siempre los errores de red o del servidor.</li>
+          <li>No uses AJAX para contenido crítico si no tienes fallback.</li>
+          <li>
+            Respalda la navegación con la API de Historial
+            (<code>history.pushState</code>) si cambias contenido importante.
+          </li>
+        </ul>
+
+        <h2>¿Es AJAX una tecnología?</h2>
+        <p class="muted">
+          No. AJAX no es un lenguaje ni una API específica, sino una
+          <strong>técnica</strong> que combina:
+        </p>
+        <ul>
+          <li>HTML y CSS para la presentación.</li>
+          <li>JavaScript para la lógica.</li>
+          <li>DOM para acceder y actualizar contenido.</li>
+          <li>XMLHttpRequest o fetch para la comunicación con el servidor.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      Resumen enfocado exclusivamente en AJAX: definición, funcionamiento,
+      ejemplos y buenas prácticas.
+    </footer>
+
+    <script>
+      function cargarUsuario() {
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+          .then((res) => res.json())
+          .then((data) => {
+            document.getElementById(
+              "ajaxResult"
+            ).textContent = `Nombre: ${data.name}\nEmail: ${data.email}\nCiudad: ${data.address.city}`;
+          })
+          .catch((err) => {
+            document.getElementById("ajaxResult").textContent =
+              "Error al obtener datos";
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resumen de JSON — Ejemplo</title>
+    <style>
+      :root {
+        --bg: #f6f6fb;
+        --card: #fff;
+        --accent: #2563eb;
+        --muted: #555;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: var(--bg);
+        margin: 0;
+        color: #111;
+        line-height: 1.6;
+      }
+      header {
+        background: linear-gradient(90deg, #fff 0, #eef2ff 100%);
+        padding: 26px 20px;
+        border-bottom: 1px solid #e6eef8;
+      }
+      .container {
+        max-width: 900px;
+        margin: 28px auto;
+        padding: 0 18px;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 22px;
+        color: var(--accent);
+      }
+      p.lead {
+        margin: 0;
+        color: var(--muted);
+      }
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.06);
+        margin-top: 18px;
+      }
+      h2 {
+        margin: 24px 0 12px;
+        font-size: 18px;
+        color: var(--accent);
+      }
+      h3 {
+        margin: 18px 0 8px;
+        font-size: 16px;
+        color: #2d3748;
+      }
+      ul, ol {
+        padding-left: 20px;
+        margin: 8px 0 12px;
+      }
+      pre {
+        background: #0b1020;
+        color: #e6eef8;
+        padding: 12px;
+        border-radius: 8px;
+        overflow: auto;
+        font-size: 13px;
+        margin: 12px 0;
+      }
+      code {
+        font-family: source-code-pro, Menlo, Monaco, monospace;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .result {
+        background: #f8f9fc;
+        border: 1px dashed #e6eef2;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+        white-space: pre-wrap;
+        font-family: monospace;
+        font-size: 13px;
+      }
+      footer {
+        max-width: 900px;
+        margin: 28px auto;
+        padding: 10px 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+        font-size: 13px;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        border: 1px solid #e2e8f0;
+        padding: 8px 10px;
+        text-align: left;
+      }
+      .comparison-table th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Resumen de JSON</h1>
+        <p class="lead">Formato ligero para intercambio y almacenamiento de datos estructurados</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>¿Qué es JSON?</h2>
+        <p class="muted">
+          JSON (JavaScript Object Notation) es un formato de texto ligero para el intercambio de datos, basado en un subconjunto del lenguaje JavaScript. Aunque deriva de JS, es lenguaje-independiente y ampliamente adoptado en aplicaciones web, móviles y backend.
+        </p>
+
+        <h3>Características principales</h3>
+        <ul>
+          <li>Ligero y fácil de leer para humanos.</li>
+          <li>Ampliamente soportado en APIs web y bibliotecas en casi todos los lenguajes.</li>
+          <li>Se representa con llaves <code>{ }</code> para objetos y corchetes <code>[ ]</code> para arreglos.</li>
+          <li>Soporta tipos de datos: cadenas, números, booleanos, nulos, objetos y arreglos.</li>
+        </ul>
+
+        <h3>Usos comunes</h3>
+        <ul>
+          <li>Intercambio de datos entre cliente y servidor (APIs REST).</li>
+          <li>Archivos de configuración (<code>.json</code>).</li>
+          <li>Almacenamiento de datos en bases NoSQL (ej. MongoDB, Firebase).</li>
+          <li>Serialización de datos en aplicaciones móviles y de escritorio.</li>
+        </ul>
+
+        <h3>Reglas de sintaxis</h3>
+        <ul>
+          <li>Los nombres de las propiedades deben ir entre <strong>comillas dobles</strong> (<code>"clave"</code>).</li>
+          <li>No se permiten comas finales ni comentarios.</li>
+          <li>Los valores de texto deben ir entre comillas dobles (no simples).</li>
+          <li>El archivo debe contener un solo valor raíz (objeto o arreglo).</li>
+        </ul>
+
+        <h3>Ejemplo práctico de JSON</h3>
+        <pre><code id="jsonExample">{
+  "producto": "Camiseta",
+  "precio": 19.99,
+  "tallas": ["S","M","L"],
+  "disponible": true,
+  "detalles": { "color": "azul", "marca": "Acme" }
+}</code></pre>
+
+        <div class="row">
+          <button onclick="runJsonDemo()">Probar JSON.parse()</button>
+          <div class="result" id="jsonResult">
+            Haz clic en "Probar JSON.parse()" para ver el resultado.
+          </div>
+        </div>
+
+        <h3>Ejemplo avanzado: Lista de invitados</h3>
+        <pre><code>{
+  "ListaInvitación": {
+    "familia": {
+      "tía": [
+        { "nombre": "Cristina" },
+        { "nombre": "Estefanía" }
+      ]
+    }
+  }
+}</code></pre>
+        <p class="muted">
+          Nota: A diferencia de XML, JSON no permite múltiples elementos del mismo nombre al mismo nivel sin usar arreglos. Por eso, usamos un arreglo <code>tía</code> con objetos.
+        </p>
+
+        <h3>Comparación: JSON vs XML</h3>
+        <table class="comparison-table">
+          <tr><th>Aspecto</th><th>JSON</th><th>XML</th></tr>
+          <tr><td><strong>Legibilidad</strong></td><td>Más conciso</td><td>Más verboso</td></tr>
+          <tr><td><strong>Tamaño</strong></td><td>Más ligero</td><td>Más pesado</td></tr>
+          <tr><td><strong>Metadatos</strong></td><td>No nativos</td><td>Sí (atributos, namespaces)</td></tr>
+          <tr><td><strong>Validación</strong></td><td>JSON Schema</td><td>DTD, XSD</td></tr>
+          <tr><td><strong>Uso predominante</strong></td><td>APIs REST modernas</td><td>Sistemas empresariales, SOAP</td></tr>
+        </table>
+
+        <h3>Ventajas de JSON</h3>
+        <ul>
+          <li>Sintaxis simple y mínima.</li>
+          <li>Parseo rápido en JavaScript (<code>JSON.parse</code>, <code>JSON.stringify</code>).</li>
+          <li>Menor sobrecarga de red (menos bytes).</li>
+          <li>Compatible con la mayoría de lenguajes modernos.</li>
+        </ul>
+
+        <h3>Desventajas de JSON</h3>
+        <ul>
+          <li>No soporta comentarios.</li>
+          <li>No tiene tipos de datos personalizados (ej. fechas, solo como cadenas).</li>
+          <li>Menos expresivo que XML para documentos complejos.</li>
+          <li>Estructura rígida: no permite atributos ni procesamiento declarativo (como XSLT).</li>
+        </ul>
+
+        <h3>Errores comunes</h3>
+        <ul>
+          <li>Usar comillas simples: ❌ <code>{ 'nombre': 'Ana' }</code></li>
+          <li>Coma final: ❌ <code>{ "edad": 30, }</code></li>
+          <li>Olvidar comillas en claves: ❌ <code>{ nombre: "Ana" }</code></li>
+          <li>Mezclar tipos sin estructura clara.</li>
+        </ul>
+
+        <h3>Cómo consumir JSON (ejemplo en JavaScript)</h3>
+        <pre><code>// Ejemplo con fetch para consumir una API que devuelve JSON
+fetch('/api/producto')
+  .then(resp => resp.json())
+  .then(data => console.log('Producto:', data))
+  .catch(err => console.error(err));</code></pre>
+
+        <h3>Validación y esquemas</h3>
+        <p class="muted">
+          Se puede validar la estructura de JSON con <strong>JSON Schema</strong>. No es tan estricto como XSD (XML), pero es útil para asegurarse que los datos tienen las propiedades esperadas.
+        </p>
+
+        <h3>Seguridad y codificación</h3>
+        <p class="muted">
+          JSON debe codificarse siempre en <strong>UTF-8</strong>. Además, al insertar JSON en HTML o JavaScript, debes evitar inyecciones (ej. escape de caracteres si se genera dinámicamente en el servidor).
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Página de ejemplo: resumen técnico, comparaciones, buenas prácticas y ejemplos prácticos de JSON.
+    </footer>
+
+    <script>
+      function runJsonDemo() {
+        const txt = document.getElementById("jsonExample").textContent;
+        try {
+          const obj = JSON.parse(txt);
+          const out = `Nombre producto: ${obj.producto}
+Precio: ${obj.precio}
+Tallas: ${obj.tallas.join(", ")}
+Disponible: ${obj.disponible}
+Detalles: color=${obj.detalles.color}, marca=${obj.detalles.marca}`;
+          document.getElementById("jsonResult").textContent = out;
+        } catch (e) {
+          document.getElementById("jsonResult").textContent =
+            "Error al parsear JSON: " + e.message;
+        }
+      }
+    </script>
+  </body>
+</html>

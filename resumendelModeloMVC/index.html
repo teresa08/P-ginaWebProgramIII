@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resumen del Modelo MVC</title>
+    <style>
+      :root {
+        --bg: #f6f6fb;
+        --card: #fff;
+        --accent: #9333ea;
+        --muted: #555;
+      }
+      body {
+        font-family: Inter, system-ui, Arial;
+        background: var(--bg);
+        margin: 0;
+        color: #111;
+        line-height: 1.6;
+      }
+      header {
+        background: linear-gradient(90deg, #fff 0%, #f3e8ff 100%);
+        padding: 26px 20px;
+        border-bottom: 1px solid #e6ddf5;
+      }
+      .container {
+        max-width: 900px;
+        margin: 28px auto;
+        padding: 0 18px;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 24px;
+        color: var(--accent);
+      }
+      p.lead {
+        margin: 0;
+        color: var(--muted);
+      }
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(147, 51, 234, 0.1);
+        margin-top: 18px;
+      }
+      h2 {
+        margin: 24px 0 12px;
+        font-size: 19px;
+        color: var(--accent);
+      }
+      h3 {
+        margin: 18px 0 10px;
+        font-size: 17px;
+        color: #4b5563;
+      }
+      h4 {
+        margin: 14px 0 6px;
+        font-size: 15px;
+        color: var(--accent);
+      }
+      ul,
+      ol {
+        padding-left: 20px;
+        margin: 8px 0 12px;
+      }
+      pre {
+        background: #0b1020;
+        color: #e6eef8;
+        padding: 12px;
+        border-radius: 8px;
+        overflow: auto;
+        font-size: 13px;
+        margin: 12px 0;
+      }
+      code {
+        font-family: source-code-pro, Menlo, Monaco, monospace;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .example-box {
+        background: #faf5ff;
+        padding: 16px;
+        border-radius: 10px;
+        margin-top: 12px;
+        border: 1px solid #eedbff;
+      }
+      .interactive-demo {
+        background: #f8fafc;
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px dashed #cbd5e1;
+        margin: 16px 0;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+      button {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .output {
+        background: #f1f5f9;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 10px;
+        white-space: pre-wrap;
+        font-family: monospace;
+        font-size: 13px;
+      }
+      footer {
+        max-width: 900px;
+        margin: 28px auto;
+        padding: 10px 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .note {
+        background: #f5f3ff;
+        padding: 12px;
+        border-left: 3px solid var(--accent);
+        border-radius: 0 6px 6px 0;
+        margin: 14px 0;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Resumen del Modelo MVC</h1>
+        <p class="lead">
+          Patrón de arquitectura para separar lógica, datos e interfaz de
+          usuario.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>¿Qué es el patrón MVC?</h2>
+        <p class="muted">
+          MVC (Modelo-Vista-Controlador) es un patrón de diseño arquitectónico
+          que divide una aplicación en tres componentes interconectados,
+          promoviendo la separación de responsabilidades.
+        </p>
+
+        <h3>Componentes del MVC</h3>
+        <ul>
+          <li>
+            <strong>Modelo (Model):</strong> Gestiona los datos, la lógica de
+            negocio y la persistencia (ej. base de datos, APIs, validaciones).
+          </li>
+          <li>
+            <strong>Vista (View):</strong> Representa la interfaz de usuario.
+            Muestra los datos del modelo y envía acciones del usuario al
+            controlador.
+          </li>
+          <li>
+            <strong>Controlador (Controller):</strong> Actúa como intermediario:
+            recibe entradas del usuario (vía la vista), actualiza el modelo y
+            decide qué vista mostrar.
+          </li>
+        </ul>
+
+        <h3>Flujo típico de interacción</h3>
+        <ol>
+          <li>
+            El usuario interactúa con la <strong>Vista</strong> (ej. hace clic
+            en un botón).
+          </li>
+          <li>La Vista notifica al <strong>Controlador</strong>.</li>
+          <li>
+            El Controlador actualiza el <strong>Modelo</strong> (ej. guarda
+            datos).
+          </li>
+          <li>El Modelo notifica cambios (directa o indirectamente).</li>
+          <li>
+            El Controlador actualiza la <strong>Vista</strong> con los nuevos
+            datos.
+          </li>
+        </ol>
+
+        <h3>¿Por qué usar MVC?</h3>
+        <ul>
+          <li>Código más organizado y modular.</li>
+          <li>Fácil mantenimiento y pruebas unitarias.</li>
+          <li>Reutilización de modelos y vistas.</li>
+          <li>Equipos pueden trabajar en paralelo (front, back, lógica).</li>
+          <li>Escalabilidad a largo plazo.</li>
+        </ul>
+
+        <h3>Desventajas</h3>
+        <ul>
+          <li>Complejidad inicial para aplicaciones pequeñas.</li>
+          <li>Curva de aprendizaje para principiantes.</li>
+          <li>Sobrediseño si no se aplica con criterio.</li>
+        </ul>
+
+        <h3>Frameworks que usan MVC</h3>
+        <ul>
+          <li>
+            <strong>Backend:</strong> Laravel (PHP), Ruby on Rails (Ruby),
+            Spring MVC (Java), Django (aunque usa un patrón similar).
+          </li>
+          <li>
+            <strong>Frontend:</strong> Angular (con variantes), Backbone.js,
+            Ember.js.
+          </li>
+        </ul>
+
+        <h3>Comparación con otros patrones</h3>
+        <ul>
+          <li>
+            <strong>MVP (Modelo-Vista-Presentador):</strong> El Presentador
+            reemplaza al Controlador y tiene más control sobre la Vista.
+          </li>
+          <li>
+            <strong>MVVM (Modelo-Vista-ViewModel):</strong> Usa enlace de datos
+            bidireccional (ej. Vue.js, Angular). La Vista se actualiza
+            automáticamente.
+          </li>
+        </ul>
+
+        <h3>Ejemplo conceptual (frontend puro)</h3>
+        <p class="muted">
+          Este ejemplo muestra una implementación mínima de MVC en el navegador,
+          sin backend.
+        </p>
+
+        <div class="example-box">
+          <h4>Modelo</h4>
+          <pre><code>// Almacena y gestiona los datos
+const UserModel = {
+  usuarios: [{ id: 1, nombre: "Ana" }, { id: 2, nombre: "Luis" }],
+  agregar(nombre) {
+    this.usuarios.push({ id: this.usuarios.length + 1, nombre });
+  },
+  obtenerTodos() {
+    return this.usuarios;
+  }
+};</code></pre>
+
+          <h4>Vista</h4>
+          <pre><code><div id="lista"></div>
+<input id="nombreInput" placeholder="Nombre" />
+<button id="btnAgregar">Agregar</button></code></pre>
+
+          <h4>Controlador</h4>
+          <pre><code>const UserController = {
+  init() {
+    this.renderizar();
+    document.getElementById("btnAgregar").onclick = () => {
+      const nombre = document.getElementById("nombreInput").value.trim();
+      if (nombre) {
+        UserModel.agregar(nombre);
+        this.renderizar();
+        document.getElementById("nombreInput").value = "";
+      }
+    };
+  },
+  renderizar() {
+    const lista = document.getElementById("lista");
+    lista.innerHTML = UserModel.obtenerTodos()
+      .map(u => `<div>• ${u.nombre}</div>`)
+      .join("");
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => UserController.init());</code></pre>
+        </div>
+
+        <div class="interactive-demo">
+          <h4>Demo funcional: Lista de usuarios (MVC en acción)</h4>
+          <div id="listaDemo"></div>
+          <input type="text" id="inputNombre" placeholder="Escribe un nombre" />
+          <div class="row">
+            <button onclick="agregarUsuario()">Agregar</button>
+            <button onclick="limpiarLista()">Limpiar</button>
+          </div>
+          <div class="output" id="demoOutput">• Ana<br />• Luis</div>
+        </div>
+
+        <div class="note">
+          <strong>Nota:</strong> En aplicaciones reales, el Modelo suele
+          comunicarse con una base de datos o API. Este ejemplo lo simula en
+          memoria.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Guía educativa sobre el patrón arquitectónico MVC: conceptos, ejemplos y
+      buenas prácticas.
+    </footer>
+
+    <script>
+      // Simulación de Modelo
+      const UserModel = {
+        usuarios: [
+          { id: 1, nombre: "Ana" },
+          { id: 2, nombre: "Luis" },
+        ],
+        agregar(nombre) {
+          this.usuarios.push({ id: this.usuarios.length + 1, nombre });
+        },
+        obtenerTodos() {
+          return this.usuarios;
+        },
+        limpiar() {
+          this.usuarios = [];
+        },
+      };
+
+      // Simulación de Vista (actualización del DOM)
+      function renderizarVista() {
+        const output = document.getElementById("demoOutput");
+        if (UserModel.obtenerTodos().length === 0) {
+          output.textContent = "Lista vacía";
+        } else {
+          output.innerHTML = UserModel.obtenerTodos()
+            .map((u) => `• ${u.nombre}`)
+            .join("<br>");
+        }
+      }
+
+      // Simulación de Controlador
+      function agregarUsuario() {
+        const input = document.getElementById("inputNombre");
+        const nombre = input.value.trim();
+        if (nombre) {
+          UserModel.agregar(nombre);
+          renderizarVista();
+          input.value = "";
+        }
+      }
+
+      function limpiarLista() {
+        UserModel.limpiar();
+        renderizarVista();
+      }
+
+      // Inicializar
+      document.addEventListener("DOMContentLoaded", renderizarVista);
+    </script>
+  </body>
+</html>

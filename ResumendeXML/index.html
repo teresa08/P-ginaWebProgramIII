@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guía Completa sobre XML</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+    h3 {
+      color: #16a085;
+      margin-top: 20px;
+    }
+    p, ul, ol {
+      margin-bottom: 16px;
+    }
+    ul, ol {
+      padding-left: 25px;
+    }
+    pre {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 18px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      margin: 20px 0;
+      font-size: 14px;
+      white-space: pre-wrap; /* Preserva saltos de línea y espacios */
+    }
+    .note {
+      background-color: #e8f4fc;
+      padding: 15px;
+      border-left: 4px solid #3498db;
+      margin: 20px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    .comparison-table th {
+      background-color: #ecf0f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Guía Completa sobre XML</h1>
+
+    <p><strong>XML</strong> (eXtensible Markup Language) es un lenguaje de marcado diseñado para almacenar, transportar y describir datos de forma estructurada, legible y compatible entre diferentes plataformas y lenguajes de programación.</p>
+
+    <h2>¿Para qué sirve XML?</h2>
+    <ul>
+      <li>Intercambio de datos entre aplicaciones o sistemas (especialmente en servicios web SOAP).</li>
+      <li>Configuración de software (archivos como <code>web.config</code>, <code>pom.xml</code>, etc.).</li>
+      <li>Almacenamiento de datos estructurados cuando no se usa una base de datos.</li>
+      <li>Formato base en estándares como RSS, SVG, XHTML, Office Open XML (.docx, .xlsx).</li>
+    </ul>
+
+    <h2>Características clave</h2>
+    <ul>
+      <li><strong>Autodescriptivo:</strong> las etiquetas definen el significado del contenido.</li>
+      <li><strong>Extensible:</strong> puedes crear tus propias etiquetas según tus necesidades.</li>
+      <li><strong>Independiente:</strong> funciona en cualquier sistema operativo o lenguaje.</li>
+      <li><strong>Validable:</strong> se puede verificar con DTD o XML Schema (XSD).</li>
+    </ul>
+
+    <h2>Sintaxis básica y reglas esenciales</h2>
+    <ul>
+      <li>Toda etiqueta de apertura debe tener su cierre: <code><nombre>...</nombre></code>.</li>
+      <li>Las etiquetas distinguen mayúsculas y minúsculas: <code><Nombre> ≠ <nombre></code>.</li>
+      <li>Debe haber un solo elemento raíz que contenga a todos los demás.</li>
+      <li>Los atributos deben ir entre comillas: <code>moneda="USD"</code>.</li>
+      <li>Los caracteres especiales deben escaparse (<code>&amp;lt;</code>, <code>&amp;amp;</code>, etc.).</li>
+    </ul>
+
+<h2>Ejemplo práctico: Lista de invitación familiar</h2>
+<p>
+  En este ejemplo, <code>&lt;ListaInvitación&gt;</code> es el 
+  <strong>elemento raíz</strong>. Contiene una 
+  <code>&lt;familia&gt;</code>, que a su vez incluye una 
+  <code>&lt;tía&gt;</code> con dos nombres:
+</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ListaInvitación&gt;
+  &lt;familia&gt;
+    &lt;tía&gt;
+      &lt;nombre&gt;Cristina&lt;/nombre&gt;
+      &lt;nombre&gt;Estefanía&lt;/nombre&gt;
+    &lt;/tía&gt;
+  &lt;/familia&gt;
+&lt;/ListaInvitación&gt;
+</code></pre>
+
+    <p>Este diseño muestra cómo XML permite anidar elementos para representar relaciones jerárquicas de datos de forma clara y lógica.</p>
+
+    <h2>XML vs JSON</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th>XML</th>
+          <th>JSON</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Legibilidad</strong></td>
+          <td>Buena, pero más verboso</td>
+          <td>Más conciso y limpio</td>
+        </tr>
+        <tr>
+          <td><strong>Uso común</strong></td>
+          <td>Servicios SOAP, configuraciones, documentos</td>
+          <td>APIs REST, datos web modernos</td>
+        </tr>
+        <tr>
+          <td><strong>Soporte para metadatos</strong></td>
+          <td>Sí (atributos, namespaces)</td>
+          <td>No directamente</td>
+        </tr>
+        <tr>
+          <td><strong>Tamaño</strong></td>
+          <td>Más pesado</td>
+          <td>Más ligero</td>
+        </tr>
+        <tr>
+          <td><strong>Validación</strong></td>
+          <td>DTD, XSD</td>
+          <td>Schemas (JSON Schema)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Ventajas de XML</h2>
+    <ul>
+      <li>Altamente estructurado y flexible.</li>
+      <li>Soporta anotaciones y metadatos mediante atributos.</li>
+      <li>Estandarizado por el W3C.</li>
+      <li>Herramientas maduras de validación y transformación (XSLT, XPath).</li>
+    </ul>
+
+    <h2>Desventajas de XML</h2>
+    <ul>
+      <li>Verbosidad: genera archivos más grandes.</li>
+      <li>Lectura y escritura más lentas que JSON.</li>
+      <li>Complejidad innecesaria para datos simples.</li>
+      <li>Menos popular en APIs web modernas (donde predomina JSON).</li>
+    </ul>
+
+    <h2>Buenas prácticas al usar XML</h2>
+    <ul>
+      <li>Usa nombres de etiquetas claros y descriptivos.</li>
+      <li>Evita mezclar contenido en texto y atributos sin coherencia.</li>
+      <li>Valida tu XML con un esquema (XSD) si la estructura es crítica.</li>
+      <li>Declara siempre la codificación (ej. UTF-8).</li>
+      <li>Evita caracteres especiales sin escapar.</li>
+    </ul>
+
+    <div class="note">
+      <p><strong>Tip:</strong> Aunque JSON es más común hoy en día para el intercambio de datos en la web, XML sigue siendo fundamental en entornos empresariales, sistemas legados, y estándares como SOAP, RSS, o formatos de documentos de Microsoft y OpenOffice.</p>
+    </div>
+  </div>
+</body>
+</html>
