@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spring Framework - Guía Técnica</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --accent: #0d9488; /* Verde esmeralda (asociado a Spring) */
+      --muted: #475569;
+      --light-accent: #ecfdf5;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(120deg, #0d9488 0%, #0f766e 100%);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+    header p.lead {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      color: var(--accent);
+      margin: 24px 0 16px;
+      font-size: 1.6rem;
+    }
+    h3 {
+      margin: 20px 0 12px;
+      font-size: 1.3rem;
+      color: #0f172a;
+    }
+    p, ul, ol {
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    pre {
+      background-color: #0f172a;
+      color: var(--accent);
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+    code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .module-card {
+      background: var(--light-accent);
+      padding: 14px;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+    .module-card h4 {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #0d9488;
+    }
+    .note {
+      background: #f0fdf4;
+      border-left: 4px solid #10b981;
+      padding: 14px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Spring Framework</h1>
+    <p class="lead">El framework más popular para el desarrollo de aplicaciones empresariales en Java.</p>
+  </header>
+
+  <div class="container">
+    <section class="card">
+      <h2>¿Qué es Spring Framework?</h2>
+      <p>
+        <strong>Spring Framework</strong> es un framework de código abierto para la plataforma Java que proporciona infraestructura integral para desarrollar aplicaciones robustas, escalables y mantenibles. Fue creado por Rod Johnson en 2002 y desde entonces se ha convertido en el estándar de facto para aplicaciones empresariales en Java.
+      </p>
+      <p>
+        Su principal objetivo es simplificar el desarrollo de aplicaciones Java mediante la <strong>inversión de control (IoC)</strong> y la <strong>inyección de dependencias (DI)</strong>, reduciendo el acoplamiento entre componentes.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Funcionalidades clave</h2>
+      <ul>
+        <li><strong>Inversión de Control (IoC):</strong> Spring gestiona el ciclo de vida y la configuración de los objetos (llamados "beans").</li>
+        <li><strong>Inyección de Dependencias (DI):</strong> Las dependencias se inyectan automáticamente, no se crean manualmente con <code>new</code>.</li>
+        <li><strong>Programación orientada a aspectos (AOP):</strong> Permite separar lógica transversal (logging, seguridad, transacciones) del código de negocio.</li>
+        <li><strong>Soporte para transacciones declarativas:</strong> Gestión de transacciones sin código repetitivo.</li>
+        <li><strong>Integración con bases de datos:</strong> Plantillas JDBC, soporte para JPA, Hibernate, y más.</li>
+        <li><strong>Pruebas unitarias y de integración:</strong> Soporte nativo para pruebas con JUnit y Mockito.</li>
+        <li><strong>Flexibilidad:</strong> No impone una arquitectura específica; se adapta a tus necesidades.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Módulos principales de Spring Framework</h2>
+      <div class="module-grid">
+        <div class="module-card">
+          <h4>Spring Core</h4>
+          <p>Contiene las funcionalidades básicas: IoC y DI.</p>
+        </div>
+        <div class="module-card">
+          <h4>Spring Context</h4>
+          <p>Construye sobre Core y agrega soporte para mensajes, eventos y recursos.</p>
+        </div>
+        <div class="module-card">
+          <h4>Spring AOP</h4>
+          <p>Implementa programación orientada a aspectos.</p>
+        </div>
+        <div class="module-card">
+          <h4>Spring JDBC</h4>
+          <p>Simplifica el acceso a bases de datos con plantillas y manejo de excepciones.</p>
+        </div>
+        <div class="module-card">
+          <h4>Spring ORM</h4>
+          <p>Integración con JPA, Hibernate, JDO, etc.</p>
+        </div>
+        <div class="module-card">
+          <h4>Spring Web</h4>
+          <p>Soporte para aplicaciones web (base para Spring MVC).</p>
+        </div>
+        <div class="module-card">
+          <h4>Spring Test</h4>
+          <p>Herramientas para pruebas en contexto de Spring.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ejemplo básico: Configuración con anotaciones</h2>
+      <p>Definimos un servicio y lo inyectamos en un controlador usando Spring.</p>
+
+      <h3>Servicio</h3>
+      <pre><code>@Service
+public class SaludoService {
+    public String generarSaludo(String nombre) {
+        return "¡Hola, " + nombre + "!";
+    }
+}</code></pre>
+
+      <h3>Controlador (Spring MVC)</h3>
+      <pre><code>@Controller
+public class SaludoController {
+    
+    @Autowired
+    private SaludoService saludoService;
+
+    @GetMapping("/saludar")
+    @ResponseBody
+    public String saludar() {
+        return saludoService.generarSaludo("María");
+    }
+}</code></pre>
+
+      <p>Spring se encarga de crear la instancia de <code>SaludoService</code> e inyectarla en el controlador.</p>
+    </section>
+
+    <section class="card">
+      <h2>Ventajas de usar Spring</h2>
+      <ul>
+        <li>✅ <strong>Bajo acoplamiento:</strong> los componentes son independientes y reemplazables.</li>
+        <li>✅ <strong>Reusabilidad:</strong> los beans se pueden reutilizar en distintos contextos.</li>
+        <li>✅ <strong>Productividad:</strong> reduce el código repetitivo (boilerplate).</li>
+        <li>✅ <strong>Comunidad y ecosistema:</strong> millones de desarrolladores, documentación extensa y soporte.</li>
+        <li>✅ <strong>Integración:</strong> se conecta fácilmente con JPA, Hibernate, Kafka, Redis, etc.</li>
+      </ul>
+
+      <div class="note">
+        <strong>Nota:</strong> <em>Spring Framework</em> es la base. <em>Spring Boot</em> (creado posteriormente) simplifica aún más la configuración con autoconfiguración y starters.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>¿Cuándo usar Spring Framework?</h2>
+      <ul>
+        <li>✅ Aplicaciones empresariales complejas.</li>
+        <li>✅ Sistemas que requieren gestión de transacciones.</li>
+        <li>✅ Proyectos que necesitan escalabilidad y mantenibilidad a largo plazo.</li>
+        <li>✅ Integración con múltiples tecnologías (bases de datos, colas, servicios web).</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Guía técnica sobre Spring Framework — Ideal para desarrolladores Java intermedios y avanzados.
+  </footer>
+
+</body>
+</html>
